@@ -3,9 +3,9 @@ import Nav from '../components/Nav';
 
 export default function BeersPage() {
   return (
-    <div>
+    <>
       <Nav />
       <p>Place holder</p>
-    </div>
+    </>
   );
 }

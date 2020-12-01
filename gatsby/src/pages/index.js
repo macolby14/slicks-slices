@@ -1,12 +1,11 @@
 import React from 'react';
-import Nav from '../components/Nav';
 
 function HomePage() {
   return (
-    <div>
-      <Nav />
+    <>
+      <p>This is the homepage</p>
       <p>EEE</p>
-    </div>
+    </>
   );
 }
 
