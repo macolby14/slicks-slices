@@ -13,10 +13,12 @@ const NavStyles = styled.nav`
     padding: 0;
     text-align: center;
     list-style: none;
+    margin-top: -6rem;
 
     display: grid;
     grid-template-columns: 1fr 1fr auto 1fr 1fr;
     grid-gap: 2rem;
+    align-items: center;
   }
 
   li {
@@ -32,7 +34,7 @@ const NavStyles = styled.nav`
     &:nth-child(4) {
       --rotate: 2.5deg;
     }
-    &: hover {
+    &:hover {
       --rotate: 3deg;
     }
     a {
