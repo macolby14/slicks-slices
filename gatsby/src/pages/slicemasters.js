@@ -61,8 +61,8 @@ export default function SlicemastersPage({
 }
 
 export const query = graphql`
-  {
-    allSanityPerson {
+  query($skip: Int = 0, $pageSize: Int = 2) {
+    allSanityPerson(limit: $pageSize, skip: $skip) {
       nodes {
         id
         name
