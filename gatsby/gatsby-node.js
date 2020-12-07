@@ -91,7 +91,7 @@ async function trunSlicemastersIntoPages({ graphql, actions }) {
       allSanityPerson: { nodes: slicemasters },
     },
   } = await graphql(`
-    query {
+    {
       allSanityPerson {
         totalCount
         nodes {
@@ -106,6 +106,18 @@ async function trunSlicemastersIntoPages({ graphql, actions }) {
   `);
 
   // 2. Turn each slicemaster into their own page
+
+  slicemasters.forEach((slicemaster) => {
+    actions.createPage({
+      path: `slicemaster/${slicemaster.slug.current}`,
+      component: path.resolve('./src/templates/Slicemaster.js'),
+      context: {
+        name: slicemaster.person,
+        slug: slicemaster.slug.current,
+      },
+    });
+  });
+
   // 3. Figure out how manyp pages based on how many slicemasters
   const pageSize = parseInt(process.env.GATSBY_PAGE_SIZE);
   console.log(`Page size is ${pageSize}`);
