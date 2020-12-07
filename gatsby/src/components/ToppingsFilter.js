@@ -73,16 +73,14 @@ export default function ToppingsFilter({ activeTopping }) {
         <span className="count">{pizzas.nodes.length}</span>
       </Link>
       {toppingsWithCounts.map((topping) => (
-        <>
-          <Link
-            key={topping.id}
-            to={`/topping/${topping.name}`}
-            className={activeTopping === topping.name ? 'active' : ''}
-          >
-            <span className="name">{topping.name}</span>
-            <span className="count">{topping.ct}</span>
-          </Link>
-        </>
+        <Link
+          key={topping.id}
+          to={`/topping/${topping.name}`}
+          className={activeTopping === topping.name ? 'active' : ''}
+        >
+          <span className="name">{topping.name}</span>
+          <span className="count">{topping.ct}</span>
+        </Link>
       ))}
     </ToppingStyles>
   );
