@@ -1,12 +1,14 @@
 import { graphql } from 'gatsby';
 import GatsbyImage from 'gatsby-image';
 import React from 'react';
+import PizzaOrder from '../components/PizzaOrder';
 import SEO from '../components/SEO';
 import MenuItemStyles from '../styles/MenuItemStyles';
 import OrderStyles from '../styles/OrderStyles';
 import calculatePizzaPrice from '../utils/calculatePizzaPrice';
 import formatMoney from '../utils/formatMoney';
 import useForm from '../utils/useForm';
+import usePizza from '../utils/usePizza';
 
 export default function OrderPage({
   data: {
@@ -18,7 +20,10 @@ export default function OrderPage({
     email: '',
   });
 
-  console.log(pizzas);
+  const { order, addToOrder, removeFromOrder } = usePizza({
+    pizzas,
+    inputs: values,
+  });
 
   return (
     <>
@@ -60,7 +65,16 @@ export default function OrderPage({
               </div>
               <div>
                 {['S', 'M', 'L'].map((size) => (
-                  <button key={size} type="button">
+                  <button
+                    key={size}
+                    type="button"
+                    onClick={() => {
+                      addToOrder({
+                        id: pizza.id,
+                        size,
+                      });
+                    }}
+                  >
                     {size} {formatMoney(calculatePizzaPrice(pizza.price, size))}
                   </button>
                 ))}
@@ -70,6 +84,11 @@ export default function OrderPage({
         </fieldset>
         <fieldset className="order">
           <legend>Order</legend>
+          <PizzaOrder
+            order={order}
+            pizzas={pizzas}
+            removeFromOrder={removeFromOrder}
+          />
         </fieldset>
       </OrderStyles>
     </>
