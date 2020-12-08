@@ -2,6 +2,8 @@ import { graphql } from 'gatsby';
 import GatsbyImage from 'gatsby-image';
 import React from 'react';
 import SEO from '../components/SEO';
+import MenuItemStyles from '../styles/MenuItemStyles';
+import OrderStyles from '../styles/OrderStyles';
 import calculatePizzaPrice from '../utils/calculatePizzaPrice';
 import formatMoney from '../utils/formatMoney';
 import useForm from '../utils/useForm';
@@ -21,7 +23,7 @@ export default function OrderPage({
   return (
     <>
       <SEO title="Order a Pizza" />
-      <form>
+      <OrderStyles>
         <fieldset>
           <legend>Your Info</legend>
           <label htmlFor="name">
@@ -43,12 +45,12 @@ export default function OrderPage({
             />
           </label>
         </fieldset>
-        <fieldset>
+        <fieldset className="menu">
           <legend>Menu</legend>
           {pizzas.map((pizza) => (
-            <div key={pizza.id}>
+            <MenuItemStyles key={pizza.id}>
               <GatsbyImage
-                with="50"
+                width="50"
                 height="50"
                 fluid={pizza.image.asset.fluid}
                 alt={pizza.name}
@@ -63,13 +65,13 @@ export default function OrderPage({
                   </button>
                 ))}
               </div>
-            </div>
+            </MenuItemStyles>
           ))}
         </fieldset>
-        <fieldset>
+        <fieldset className="order">
           <legend>Order</legend>
         </fieldset>
-      </form>
+      </OrderStyles>
     </>
   );
 }
