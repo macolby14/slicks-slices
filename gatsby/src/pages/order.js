@@ -21,10 +21,7 @@ export default function OrderPage({
     email: '',
   });
 
-  const { order, addToOrder, removeFromOrder } = usePizza({
-    pizzas,
-    inputs: values,
-  });
+  const { order, addToOrder, removeFromOrder } = usePizza();
 
   return (
     <>
