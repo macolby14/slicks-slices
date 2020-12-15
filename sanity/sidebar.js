@@ -1,7 +1,7 @@
 import React from 'react';
 import S from '@sanity/desk-tool/structure-builder';
 
-// build custom sidebar
+// build custom sidebar - only allow for a single stor settings
 
 export default function Sidebar() {
   return S.list()
