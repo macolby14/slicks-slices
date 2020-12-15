@@ -6,8 +6,6 @@ import SEO from '../components/SEO';
 export default function SingleSlicemasterPage({
   data: { sanityPerson: person },
 }) {
-  console.log('Slicemaster template');
-  console.log(person);
   return (
     <>
       <SEO title={person.name} image={person.image.asset.src} />

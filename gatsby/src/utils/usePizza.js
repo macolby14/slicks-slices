@@ -46,7 +46,6 @@ export default function usePizza({ pizzas, values }) {
       }
     );
 
-    console.log(res);
     setLoading(false);
 
     if (res.status >= 400 && res.status < 600) {
