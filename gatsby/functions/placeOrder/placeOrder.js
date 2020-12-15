@@ -35,10 +35,17 @@ const transporter = nodemailer.createTransport({
 });
 
 exports.handler = async (event, context) => {
-  // Validate data comming in
-
   const body = JSON.parse(event.body);
 
+  // Check if honeypot was filled out
+  if (body.mapleSyrup) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ message: `Beep Bop Bop ERROR 999` }),
+    };
+  }
+
+  // Check input validation
   const requiredFields = ['email', 'name', 'order'];
 
   for (const field of requiredFields) {
@@ -50,6 +57,7 @@ exports.handler = async (event, context) => {
     }
   }
 
+  // Check that user order something
   if (body.order.length === 0) {
     return {
       statusCode: 400,
