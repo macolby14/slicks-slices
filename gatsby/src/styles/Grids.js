@@ -19,15 +19,7 @@ export const ItemStyles = styled.div`
     height: auto;
     font-size: 0;
   }
-  p {
-    transform: rotate(-2deg) translateY(-50%);
-    position: absolute;
-    width: 100%;
-    left: 0;
-    .mark {
-      display: inline;
-    }
-  }
+
   @keyframes shine {
     from {
       background-position: 200%;
@@ -36,6 +28,7 @@ export const ItemStyles = styled.div`
       background-position: -40px;
     }
   }
+
   img.loading {
     --shine: var(--white);
     --background: var(--grey);
@@ -47,5 +40,15 @@ export const ItemStyles = styled.div`
     );
     animation: shine 1s infinite linear;
     background-size: 500px;
+  }
+
+  p {
+    transform: rotate(-2deg) translateY(-140%);
+    position: absolute;
+    width: 100%;
+    left: 0;
+    .mark {
+      display: inline;
+    }
   }
 `;

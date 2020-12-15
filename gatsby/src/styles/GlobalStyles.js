@@ -76,7 +76,7 @@ const GlobalStyles = createGlobalStyle`
     max-width: 100%;
   }
   .tilt {
-    transform: rotate(-2deg);
+    transform: rotate(-3deg);
     position: relative;
     display: inline-block;
   }
