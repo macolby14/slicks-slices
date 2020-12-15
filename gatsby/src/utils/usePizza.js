@@ -35,26 +35,36 @@ export default function usePizza({ pizzas, values }) {
     };
 
     // 4. Send this data to a serverless function for checkout
-    const res = await fetch(
-      `${process.env.GATSBY_SERVERLESS_BASE}/placeOrder`,
-      {
+    let res = null;
+    try {
+      res = await fetch(`${process.env.GATSBY_SERVERLESS_BASE}/placeOrder`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(body),
-      }
-    );
+      });
+    } catch (err) {
+      console.log('Caught error');
+      setError('Fetch to server failed');
+      return err;
+    }
 
     setLoading(false);
 
+    console.log(res);
+    const resMessage = await res
+      .json()
+      .then((jsonResp) => jsonResp.message)
+      .catch(() => res.statusText);
+
     if (res.status >= 400 && res.status < 600) {
-      setError(`${res.status} ${res.statusText}`);
-      return res.status;
+      setError(`${res.status} ${resMessage}`);
+      return resMessage;
     }
-    const text = await res.json();
+
     setMessage('Success! Your order is being processed');
-    return text;
+    return resMessage;
   }
 
   return {

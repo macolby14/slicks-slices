@@ -50,15 +50,31 @@ exports.handler = async (event, context) => {
     }
   }
 
+  if (body.order.length === 0) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({
+        message: "You can't order nothing",
+      }),
+    };
+  }
+
   const { name, email, order, total } = body;
 
   // send Email
-  const info = await transporter.sendMail({
-    from: "Slick's Slices <slick@example.com>",
-    to: `${name} <${email}>, orders@example.com`,
-    subject: 'New Order!',
-    html: generateOrderEmail({ order, total }),
-  });
+  try {
+    await transporter.sendMail({
+      from: "Slick's Slices <slick@example.com>",
+      to: `${name} <${email}>, orders@example.com`,
+      subject: 'New Order!',
+      html: generateOrderEmail({ order, total }),
+    });
+  } catch (err) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ message: 'Error sending email' }),
+    };
+  }
 
   return {
     statusCode: 200,
