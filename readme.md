@@ -1,10 +1,10 @@
-# Slick Slices - Resteraunt Page
+# Slick Slices -  Restaurant Page Built with Gatsby
 ## https://priceless-heisenberg-34ee44.netlify.app/
 
 ### Frontend: 
 * Gatsby
 * React
-* Javascript
+* JavaScript
 * CSS & HTML
 ### Backend/Other:
 * Sanity CMS
@@ -12,7 +12,7 @@
 * Serverless functions
 * SMTP Service (fake service) 
 
-### A fast, responsive site for a restaraunt example site built using modern web technolgoies. Built with Wes Bos tutorial
+### A fast, responsive site for a restaurant example site built using modern web technologies. Built with Wes Bos tutorial
 
 ### Screenshots:
 
