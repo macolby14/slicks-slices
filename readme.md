@@ -16,10 +16,10 @@
 
 ### Screenshots:
 
-#### Hompage:
+#### Hompage
 ![Homepage Screenshot](/screenshots/homepage_screenshot.jpg?raw=true)
 
-#### Orders Page:
+#### Orders Page
 ![Orders Screenshot](/screenshots/orders_screenshot.jpg?raw=true)
 
 #### Sanity Studio (CMS)
