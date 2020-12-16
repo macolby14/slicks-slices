@@ -8,3 +8,7 @@ public/
 # env files
 .env
 .env*
+
+
+#Sanity build files
+dist/
