@@ -21,14 +21,10 @@
 
 <br />
 
+### Screenshots:
+
 ![Homepage Screenshot](/screenshots/homepage_screenshot.jpg?raw=true)
 
 ![Orders Screenshot](/screenshots/orders_screenshot.jpg?raw=true)
 
 ![Sanity Studio Screenshot](/screenshots/sanitystudio_screenshot.jpg?raw=true)
-
-![Pizzas Screenshot](/screenshots/pizzas_screenshot.jpg?raw=true)
-
-![Slicemasters Screenshot](/screenshots/slicemasters_screenshot.jpg?raw=true)
-
-
