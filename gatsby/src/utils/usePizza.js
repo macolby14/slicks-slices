@@ -52,8 +52,6 @@ export default function usePizza({ pizzas, values }) {
     }
 
     setLoading(false);
-
-    console.log(res);
     const resMessage = await res
       .json()
       .then((jsonResp) => jsonResp.message)

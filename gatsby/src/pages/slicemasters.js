@@ -42,7 +42,7 @@ export default function SlicemastersPage({
   data: {
     allSanityPerson: { totalCount, nodes: slicemasters },
   },
-  pageContext: { skip, currentPage, pageSize },
+  pageContext: { skip, currentPage },
 }) {
   return (
     <>
