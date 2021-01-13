@@ -1,6 +1,6 @@
 # Slick Slices -  Restaurant Page Built with Gatsby
 ## https://priceless-heisenberg-34ee44.netlify.app/
-## A fast, responsive site for a restaurant example site built using modern web technologies. Built as part of online course.
+## A fast, responsive site for a restaurant example site built using modern web technologies. Built as part of an online course.
 
 ### Frontend: 
 * Gatsby
